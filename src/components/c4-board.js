@@ -17,7 +17,7 @@ export class C4Board extends LitElement {
             @media(min-width: 380px) {
                 :host {
                     column-gap: 0.7rem;
-                    row-gap: 1rem;
+                    row-gap: 0.7rem;
                     
                 }
             }

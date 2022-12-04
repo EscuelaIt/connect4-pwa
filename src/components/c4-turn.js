@@ -10,10 +10,15 @@ export class C4Turn extends LitElement {
                 display: block;
                 margin-top: 1.2rem;
             }
+            main {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 0.6rem 0.3rem 0;
+            }
             .player {
                 display: flex;
                 flex-direction: row;
-                margin: 0.75rem;
+                margin: 0.4rem 0.2rem;
                 align-items: center;
                 opacity: 0.4;
             }
@@ -22,6 +27,11 @@ export class C4Turn extends LitElement {
             }
             .active {
                 opacity: 1;
+            }
+            @media(min-width: 635px) {
+                main {
+                    flex-direction: column;
+                }
             }
         `
     ];
@@ -40,14 +50,16 @@ export class C4Turn extends LitElement {
 
     render() {
         return html`
-            <article class="player ${this.activePlayerColor == "Red" ? 'active' : ''}">
-                <c4-token color="R"></c4-token>
-                <span>Player red</span>
-            </article>
-            <article class="player ${this.activePlayerColor == "Yellow" ? 'active' : ''}">
-                <c4-token color="Y"></c4-token>
-                <span>Player Yellow</span>
-            </article>
+            <main>
+                <article class="player ${this.activePlayerColor == "Red" ? 'active' : ''}">
+                    <c4-token color="R"></c4-token>
+                    <span>Player red</span>
+                </article>
+                <article class="player ${this.activePlayerColor == "Yellow" ? 'active' : ''}">
+                    <c4-token color="Y"></c4-token>
+                    <span>Player Yellow</span>
+                </article>
+            </main>
         `;
     }
 

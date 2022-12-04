@@ -16,7 +16,11 @@ export class C4Game extends LitElement {
     static styles = [
         css`
             :host {
+                width: 100%;
                 --primary-color: #09A5FF;
+                display: flex;
+                flex-direction: column;
+                justify-content: stretch;
             }
             section {
                 flex-direction: column;
@@ -24,7 +28,8 @@ export class C4Game extends LitElement {
                 display: flex;
                 align-items: stretch;
                 width: 100%;
-                min-height: 200px;
+                min-height: 150px;
+                flex-grow: 1;
             }
             .hidden {
                 display: none;
@@ -58,13 +63,7 @@ export class C4Game extends LitElement {
                     flex-direction: row;
                 }
             }
-            @media(min-width: 550px) {
-                :host {
-                    box-shadow: 4px 4px 12px rgba(100, 100, 100, 0.5);
-                    border: 8px solid #fff;
-                    border-radius: 0.5rem;
-                }
-            }
+            
         `
     ];
 
